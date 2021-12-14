@@ -12,4 +12,7 @@ public interface LibrosONRemote {
 	
 	
 	public List<Libro> getLibros();
+	
+	public Libro getLibro(int codigo);
 }
+

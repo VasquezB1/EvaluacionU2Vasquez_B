@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import ec.edu.ups.EvaluacionU2Vasquez_B.business.LibrosON;
 import ec.edu.ups.EvaluacionU2Vasquez_B.model.Libro;
+
 @Named
 @RequestScoped
 public class LibroBean {
@@ -46,7 +47,7 @@ public class LibroBean {
 		this.libros = libros;
 	}
 	
-	public String cargarLibro2() {
+	public String cargarLibro() {
 		
 		int codigo = lib.getCodigo();
 		Libro l = librosON.getLibro(codigo);
@@ -65,25 +66,4 @@ public class LibroBean {
 
 		return "lista-libro?faces-redirect=true";
 	}
-	
-	public String cargarLibro() {
-		int codigo = lib.getCodigo();
-		Libro l = librosON.getLibro(codigo);
-		String nombreLib = lib.getNombreLibro();
-		String nombre = lib.getAutor();		
-		String editorial = lib.getEditorial();
-		int numP = lib.getNumeropag();
-		
-		lib.setCodigo(l.getCodigo());
-		lib.setNombreLibro(l.getNombreLibro());
-		lib.setAutor(l.getAutor());
-		lib.setEditorial(l.getEditorial());
-		lib.setNumeropag(l.getNumeropag());
-		return null;
-	}
-	
-	
-	
-	
-	
 }
