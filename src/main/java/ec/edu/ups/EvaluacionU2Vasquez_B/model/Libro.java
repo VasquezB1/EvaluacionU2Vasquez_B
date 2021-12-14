@@ -21,18 +21,25 @@ public class Libro implements Serializable {
 	@GeneratedValue
 	@Column(name = "lib_codigo")
 	private int codigo;
+	@Column(name = "lib_nombre")
+	private String nombreLibro;
 	@Column(name = "lib_autor")
 	private String autor;
 	@Column(name = "lib_editorial")
 	private String editorial;
 	@Column(name = "lib_paginas")
 	private int numeropag;
-	
 	public int getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+	public String getNombreLibro() {
+		return nombreLibro;
+	}
+	public void setNombreLibro(String nombreLibro) {
+		this.nombreLibro = nombreLibro;
 	}
 	public String getAutor() {
 		return autor;
@@ -52,6 +59,7 @@ public class Libro implements Serializable {
 	public void setNumeropag(int numeropag) {
 		this.numeropag = numeropag;
 	}
+	
 	
 	
 	
