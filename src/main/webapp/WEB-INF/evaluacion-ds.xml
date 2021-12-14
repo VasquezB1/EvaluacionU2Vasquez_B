@@ -5,7 +5,7 @@
     <!-- The datasource is bound into JNDI at this location. We reference 
         this in META-INF/persistence.xml -->
     <datasource jndi-name="java:jboss/datasources/demojeeDS"
-        pool-name="demowsDS" enabled="true"
+        pool-name="jboss-javaee-webapp" enabled="true"
         use-java-context="true">
         <connection-url>jdbc:h2:mem:jboss-javaee-webapp;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
         <driver>h2</driver>
@@ -14,4 +14,16 @@
             <password>sa</password>
         </security>
     </datasource>
+    
+    
+    <datasource jta="true" jndi-name="java:jboss/datasources/ejPostgresDS" pool-name="ejPostgresDS" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:postgresql://localhost:5432/libros</connection-url>
+                    <driver>postgresql-driver</driver>
+                    <security>
+                        <user-name>postgres</user-name>
+                        <password>admin</password>
+                    </security>
+                </datasource>
+    
+    
 </datasources>
