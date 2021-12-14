@@ -22,4 +22,8 @@ public class LibrosON {
 		return libroDAO.getList();
 	}
 	
+	public Libro getLibro(int codigo) {
+		Libro l = libroDAO.read(codigo);
+		return l;
+	}
 }
